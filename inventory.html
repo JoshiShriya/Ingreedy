@@ -175,5 +175,16 @@
       <p>© Made at SheHacks9 by Kenda, Orayda, Shriya, Jasmine</p>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const inventoryContainer = document.querySelector('.inventory-container ul');
+      // Retrieve inventory from localStorage
+      const inventory = JSON.parse(localStorage.getItem('inventory')) || [];
+      // Populate the inventory list
+      inventoryContainer.innerHTML = inventory.map(item => `<li>${item}</li>`).join('');
+    });
+  </script>
+  
 </body>
 </html>

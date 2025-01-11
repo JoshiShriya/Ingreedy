@@ -126,6 +126,7 @@
       }
     }
   </style>
+  <script src="script.js"></script> 
 </head>
 
 <body>
@@ -152,6 +153,8 @@
         placeholder="Enter Pantry Item"
         id="pantryInput"
       >
+
+      <button type="button" class="menu-button" id="addButton">Add</button>
     </div>
 
     <div class="button-container">
@@ -185,6 +188,26 @@
         alert(`You selected: ${fileName}`);
       }
     });
+
+    const addButton = document.getElementById('addButton');
+  const pantryInput = document.getElementById('pantryInput');
+
+  addButton.addEventListener('click', () => {
+    const item = pantryInput.value.trim();
+    if (item) {
+      // Retrieve existing inventory from localStorage
+      let inventory = JSON.parse(localStorage.getItem('inventory')) || [];
+      // Add new item
+      inventory.push(item);
+      // Save updated inventory back to localStorage
+      localStorage.setItem('inventory', JSON.stringify(inventory));
+      alert(`${item} added to inventory.`);
+      // Clear the input field
+      pantryInput.value = '';
+    } else {
+      alert('Please enter a pantry item.');
+    }
+  });
   </script>
 </body>
 </html>

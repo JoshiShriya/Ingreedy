@@ -100,4 +100,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add more event listeners as needed...
   
   });
-  
