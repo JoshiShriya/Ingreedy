@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ingreedy - Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffdce0, #ffffff);
+      font-family: 'Trebuchet MS', Helvetica, sans-serif; 
+    }
+
+    .wrapper {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 30px;
+      background-color: #fff;
+      border: 2px solid #f44336; 
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      color: #f44336; 
+      font-size: 32px;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .input-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px 0;
+    }
+
+    .camera-btn {
+      padding: 15px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #f44336; 
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    .camera-btn:hover {
+      background: #e53935;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(244, 67, 54, 0.6);
+    }
+    .camera-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+    }
+
+    .pantry-input {
+      padding: 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 240px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .menu-button {
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #f44336;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+      transition: all 0.3s ease;
+      font-weight: bold;
+      width: 200px; 
+      text-align: center;
+    }
+    .menu-button:hover {
+      background: #e53935;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(244, 67, 54, 0.6);
+    }
+    .menu-button:active {
+      transform: translateY(0);
+      box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #555;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-button {
+        width: 100%;
+        padding: 15px 0;
+      }
+      .wrapper {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Welcome to Ingreedy</h1>
+
+    <p>Add a pantry item or ingredient<br>
+       Search it up or click on the camera<br>
+       to take a picture of the item
+    </p>
+
+    <div class="input-area">
+        <input 
+        type="file" 
+        accept="image/*"
+        id="cameraInput" 
+        style="display: none;"
+      >
+      <button class="camera-btn" id="cameraBtn">📷</button>
+
+      <input 
+        type="text" 
+        class="pantry-input" 
+        placeholder="Enter Pantry Item"
+        id="pantryInput"
+      >
+    </div>
+
+    <div class="button-container">
+      <button type="button" class="menu-button" onclick="window.location.href='inventory.html'">
+        Inventory
+      </button>
+      <button type="button" class="menu-button" onclick="window.location.href='recipes.html'">
+        Recipes
+      </button>
+      <button type="button" class="menu-button" onclick="window.location.href='favourites.html'">
+        Favourites
+      </button>
+    </div>
+
+    <footer>
+      <p>© Made at SheHacks9 by Kenda, Orayda, Shriya, Jasmine</p>
+    </footer>
+  </div>
+
+  <script>
+    const cameraBtn = document.getElementById('cameraBtn');
+    const cameraInput = document.getElementById('cameraInput');
+
+    cameraBtn.addEventListener('click', () => {
+      cameraInput.click();
+    });
+
+    cameraInput.addEventListener('change', () => {
+      if (cameraInput.files && cameraInput.files.length > 0) {
+        const fileName = cameraInput.files[0].name;
+        alert(`You selected: ${fileName}`);
+      }
+    });
+  </script>
+</body>
+</html>
