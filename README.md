@@ -7,6 +7,8 @@ Ingreedy is a web application designed to simplify meal planning and cooking by 
 - Generate recipe ideas based on available ingredients, meal type, and skill level.
 - Save favorite recipes for easy access later.
 
+[Demo Video] (https://youtu.be/k5D6dpmNcG4)
+
 ---
 
 ## Features
