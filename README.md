@@ -15,6 +15,7 @@ Ingreedy is a web application designed to simplify meal planning and cooking by 
 - **Recipe Generation:** Receive tailored recipe suggestions based on your ingredients, cooking preferences, and skill level.
 - **Favorite Recipes:** Save your favorite recipes for future reference.
 - **AI-Powered Recipe Suggestions:** Uses OpenAI's GPT model to generate recipe ideas.
+- **Image Analysis:** Identifies ingredients in uploaded images using the TensorFlow.js Coco-SSD object detection model.
 
 ---
 
@@ -23,6 +24,7 @@ Ingreedy is a web application designed to simplify meal planning and cooking by 
 - **Frontend:** HTML5, CSS3, JavaScript
 - **Backend:** Node.js, Express.js
 - **AI Integration:** OpenAI GPT-3.5 Turbo
+- **Image Recognition:** TensorFlow.js with the Coco-SSD model
 - **Dependencies:** 
   - `cors` for enabling Cross-Origin Resource Sharing
   - `dotenv` for environment variable management
